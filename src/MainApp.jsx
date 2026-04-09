@@ -157,3 +157,41 @@ Close
 </div>
 
 </section>
+import { useState } from "react"
+const products = [
+  { id:1, name:"Wooden Elephant", price:1200, category:"Wood", img:"/images/elephant.jpg" },
+  { id:2, name:"Marble Taj Mahal", price:2500, category:"Marble", img:"/images/tajmahal.jpg" },
+  { id:3, name:"Handmade Vase", price:900, category:"Decor", img:"/images/vase.jpg" },
+  { id:4, name:"Brass Diya", price:500, category:"Brass", img:"/images/diya.jpg" },
+]
+const [search,setSearch] = useState("")
+
+const filteredProducts = products.filter(p =>
+  p.name.toLowerCase().includes(search.toLowerCase())
+)
+<input
+  type="text"
+  placeholder="Search handicrafts..."
+  className="searchBar"
+  value={search}
+  onChange={(e)=>setSearch(e.target.value)}
+/>
+    <div className="products">
+
+{filteredProducts.map(item => (
+
+<div className="productCard" key={item.id}>
+
+<img src={item.img} />
+
+<h3>{item.name}</h3>
+
+<p>₹{item.price}</p>
+
+<button>Add to Cart</button>
+
+</div>
+
+))}
+
+</div>
