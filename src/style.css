@@ -530,3 +530,30 @@ transform:translateY(0);
 }
 
 }
+.searchBar{
+
+width:100%;
+max-width:400px;
+display:block;
+
+margin:0 auto 30px auto;
+
+padding:12px 16px;
+
+border-radius:8px;
+
+border:1px solid #ddd;
+
+font-size:15px;
+
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+
+}
+
+.searchBar:focus{
+
+outline:none;
+
+border-color:#C6A55C;
+
+}
